@@ -46,7 +46,8 @@ export const UserTable: React.FC = () => {
                 style={{
                   position: "sticky",
                   left: 0,
-                  background: "lightGray",
+                  background: "white",
+                  borderRight: "1px solid blue",
                   zIndex: 3,
                 }}
               >
@@ -59,7 +60,8 @@ export const UserTable: React.FC = () => {
                 style={{
                   position: "sticky",
                   right: 0,
-                  background: "lightGray",
+                  background: "white",
+                  borderLeft: "1px solid blue",
                 }}
               >
                 Monthly Total

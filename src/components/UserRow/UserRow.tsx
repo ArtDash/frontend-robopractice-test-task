@@ -19,7 +19,12 @@ export const UserRow: React.FC<UserProps> = ({ name, days, total }) => {
   return (
     <TableRow>
       <TableCell
-        style={{ position: "sticky", left: 0, background: "lightGray" }}
+        style={{
+          position: "sticky",
+          left: 0,
+          background: "white",
+          borderRight: "1px solid blue",
+        }}
       >
         {name}
       </TableCell>
@@ -36,7 +41,12 @@ export const UserRow: React.FC<UserProps> = ({ name, days, total }) => {
       })}
 
       <TableCell
-        style={{ position: "sticky", right: 0, background: "lightGray" }}
+        style={{
+          position: "sticky",
+          right: 0,
+          background: "white",
+          borderLeft: "1px solid blue",
+        }}
       >
         {totalHours}:{totalMinutes}
       </TableCell>
