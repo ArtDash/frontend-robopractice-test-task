@@ -18,7 +18,11 @@ export const UserRow: React.FC<UserProps> = ({ name, days, total }) => {
 
   return (
     <TableRow>
-      <TableCell>{name}</TableCell>
+      <TableCell
+        style={{ position: "sticky", left: 0, background: "lightGray" }}
+      >
+        {name}
+      </TableCell>
 
       {days.map((item) => {
         const hours = ~~(item.TimeSpent / 60);
@@ -31,7 +35,9 @@ export const UserRow: React.FC<UserProps> = ({ name, days, total }) => {
         );
       })}
 
-      <TableCell>
+      <TableCell
+        style={{ position: "sticky", right: 0, background: "lightGray" }}
+      >
         {totalHours}:{totalMinutes}
       </TableCell>
     </TableRow>

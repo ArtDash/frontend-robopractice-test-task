@@ -1,15 +1,17 @@
-import React, { SyntheticEvent, useState } from "react";
+import React from "react";
+
+// Effector
+import { useStore } from "effector-react";
+import { $search, searchTerm } from "../../models/users";
 
 // Components
 import { TextField } from "@mui/material";
-import { searchTerm } from "../../models/users";
 
 export const SearchBar: React.FC = () => {
-  const [search, setSearch] = useState("");
+  const search = useStore($search);
 
   const handleSearch = (event: any) => {
-    setSearch(event.currentTarget.value);
-    searchTerm(search);
+    searchTerm(event.target.value);
   };
 
   return (

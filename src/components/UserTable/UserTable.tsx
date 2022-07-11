@@ -42,11 +42,28 @@ export const UserTable: React.FC = () => {
         <Table stickyHeader>
           <TableHead>
             <TableRow>
-              <TableCell>User</TableCell>
+              <TableCell
+                style={{
+                  position: "sticky",
+                  left: 0,
+                  background: "lightGray",
+                  zIndex: 3,
+                }}
+              >
+                User
+              </TableCell>
               {monthDays.map((day) => (
                 <TableCell key={day}>{day}</TableCell>
               ))}
-              <TableCell>Monthly Total</TableCell>
+              <TableCell
+                style={{
+                  position: "sticky",
+                  right: 0,
+                  background: "lightGray",
+                }}
+              >
+                Monthly Total
+              </TableCell>
             </TableRow>
           </TableHead>
 

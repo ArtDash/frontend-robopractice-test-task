@@ -5,6 +5,8 @@ type User = {
   id: number;
   Fullname: string;
   Days: Array<Day>;
+  newDays: Array<PreparedDays>;
+  totalTimeSpent: number;
 };
 
 type PreparedUser = {
