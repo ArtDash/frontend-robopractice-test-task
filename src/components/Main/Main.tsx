@@ -8,6 +8,7 @@ import Styles from "./Main.module.css";
 
 // Components
 import { UserTable } from "../UserTable/UserTable";
+import { SearchBar } from "../SearchBar/SearchBar";
 
 export const Main: React.FC = () => {
   useEffect(() => {
@@ -16,8 +17,7 @@ export const Main: React.FC = () => {
 
   return (
     <div className={Styles.wrapper}>
-      <div>SearchBar</div>
-
+      <SearchBar />
       <UserTable />
     </div>
   );

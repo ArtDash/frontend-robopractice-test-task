@@ -1,13 +1,8 @@
 // Types
-import { Day } from "../types/users";
-
-type ResultType = Array<{
-  DayNumber: number;
-  TimeSpent: number;
-}>;
+import { Day, PreparedDays } from "../types/users";
 
 export const daysHandler = (days: Array<Day>) => {
-  const result: ResultType = Array.from({ length: 31 }, (_, i) => ({
+  const result: PreparedDays[] = Array.from({ length: 31 }, (_, i) => ({
     DayNumber: i + 1,
     TimeSpent: 0,
   }));

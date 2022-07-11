@@ -1,22 +1,26 @@
 import React from "react";
 
+// Types
+import { PreparedDays } from "../../types/users";
+
 // Components
 import { TableRow, TableCell } from "@mui/material";
-import { daysHandler } from "../../utils/daysHandler";
 
 type UserProps = {
   name: string;
-  days: any;
+  days: PreparedDays[];
+  total: number;
 };
 
-export const UserRow: React.FC<UserProps> = ({ name, days }) => {
-  const newDays = daysHandler(days);
+export const UserRow: React.FC<UserProps> = ({ name, days, total }) => {
+  const totalHours = ~~(total / 60);
+  const totalMinutes = total % 60;
 
   return (
     <TableRow>
       <TableCell>{name}</TableCell>
 
-      {newDays.map((item) => {
+      {days.map((item) => {
         const hours = ~~(item.TimeSpent / 60);
         const minutes = item.TimeSpent % 60;
 
@@ -27,7 +31,9 @@ export const UserRow: React.FC<UserProps> = ({ name, days }) => {
         );
       })}
 
-      <TableCell>0</TableCell>
+      <TableCell>
+        {totalHours}:{totalMinutes}
+      </TableCell>
     </TableRow>
   );
 };
